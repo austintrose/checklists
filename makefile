@@ -8,8 +8,9 @@ SRC_DIRS := $(wildcard $(SRC)/*)
 TARGETS := $(addsuffix .pdf,$(subst src,out,$(SRC_DIRS)))
 
 # External directories
-PANDOC=/opt/homebrew/bin/pandoc
+PANDOC=/usr/bin/pandoc
 PANDOC_OPTIONS=--defaults ./pandoc/defaults.yaml
+JINJA=/usr/bin/python3 ./render.py
 RM=/bin/rm -f
 
 .PHONY: all list clean
@@ -21,9 +22,10 @@ list:
 	@echo $(TARGETS)
 
 .SECONDEXPANSION:
-$(OUT)/%.pdf: $(CWD)/css/checklist.css $$(wildcard $(SRC)/%/*.html) | $(OUT)
-	@echo $@
-	@$(PANDOC) $(PANDOC_OPTIONS) $(filter-out $<,$^) -o $@
+$(OUT)/%.pdf: $(CWD)/css/checklist.css $$(wildcard $(SRC)/%/*.jinja) $(SRC)/%/data.yml | $(OUT)
+	@echo $(filter %.jinja,$^) | xargs -n1 $(JINJA) --data data.yml --template
+	$(PANDOC) $(PANDOC_OPTIONS) $(subst jinja,html,$(filter %.jinja,$^)) -o $@
+	@$(RM) $(subst jinja,html,$(filter %.jinja,$^))
 
 $(OUT):
 	@mkdir -p $@

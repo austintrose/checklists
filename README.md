@@ -1,3 +1,24 @@
+# Austin Notes
+```
+Distro: Ubuntu 22.04.3 LTS
+
+Pandoc:
+  https://github.com/jgm/pandoc/releases/download/3.1.11.1/pandoc-3.1.11.1-1-amd64.deb
+  pandoc 3.1.11.1
+
+WeasyPrint:
+  sudo apt-get install weasyprint
+  WeasyPrint version 54.1
+
+Jinja2:
+  Python 3.10.12
+  sudo apt install python3-pip
+  python3 -m pip install Jinja2
+  Jinja2-3.1.3
+  python3 -m pip install jinja2-cli
+  jinja2-cli-0.8.2
+```
+
 # Checklists
 
 This repository holds checklists, written in HTML/CSS, and additional configuration and script to generate a PDF from the source.
