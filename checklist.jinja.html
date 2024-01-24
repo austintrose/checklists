@@ -1,0 +1,117 @@
+{% macro list(details) %}
+<div class="list {{details.color}}">
+    <h1 class="{{details.color}}">{{details.title}}</h1>
+    {% for i in details.steps %}
+    {% for k, v in i|items %}
+    <div class="row {{details.color}}">
+        <div class="col left {{details.color}}">{{k}}</div>
+        <div class="col middle {{details.color}}"></div>
+        <div class="col right {{details.color}}">{{v}}</div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+</div>
+{% endmacro %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Checklists</title>
+    <link rel="stylesheet" href="./checklist.css">
+</head>
+
+<body class="letter portrait">
+    <!-- <section class="sheet"> -->
+    <div class="parent sheet">
+        <div class="cut-top"></div>
+        <div class="cut-left"></div>
+        <div class="content left">
+            <h2>Warrior III (PA-28-161)</h2>
+            <h3>Bedford Checklists</h2>
+            {{list(bed_frequencies)}}
+        </div>
+        <div class="content right">
+            {{list(speeds)}}
+            {{list(specs)}}
+        </div>
+        <div class="cut-right"></div>
+        <div class="cut-bottom"></div>
+    </div>
+    <!-- </section> -->
+    <!-- <section class="sheet"> -->
+    <div class="parent sheet">
+        <div class="cut-top"></div>
+        <div class="cut-left"></div>
+        <div class="content left">
+            {{list(cabin)}}
+            {{list(right_wing)}}
+        </div>
+        <div class="content right">
+            {{list(nose)}}
+            {{list(left_wing)}}
+            {{list(empennage)}}
+        </div>
+        <div class="cut-right"></div>
+        <div class="cut-bottom"></div>
+    </div>
+    <!-- </section> -->
+    <!-- <section class="sheet"> -->
+    <div class="parent sheet">
+        <div class="cut-top"></div>
+        <div class="cut-left"></div>
+        <div class="content left">
+            {{list(passenger_brief)}}
+            {{list(before_engine_start)}}
+            {{list(engine_start)}}
+        </div>
+        <div class="content right">
+            {{list(before_taxi)}}
+            {{list(pre_taxi_brief)}}
+            {{list(taxi)}}
+        </div>
+        <div class="cut-right"></div>
+        <div class="cut-bottom"></div>
+    </div>
+    <!-- </section> -->
+    <!-- <section class="sheet"> -->
+    <div class="parent sheet">
+        <div class="cut-top"></div>
+        <div class="cut-left"></div>
+        <div class="content left">
+            {{list(engine_runup)}}
+            {{list(before_takeoff)}}
+        </div>
+        <div class="content right">
+            {{list(takeoff_brief)}}
+            {{list(takeoff)}}
+        </div>
+        <div class="cut-right"></div>
+        <div class="cut-bottom"></div>
+    </div>
+    <!-- </section> -->
+    <!-- <section class="sheet"> -->
+    <div class="parent sheet">
+        <div class="cut-top"></div>
+        <div class="cut-left"></div>
+        <div class="content left">
+            {{list(climb)}}
+            {{list(cruise)}}
+            {{list(fuel_tank_switch)}}
+            {{list(descent)}}
+            {{list(approach_and_landing)}}
+        </div>
+        <div class="content right">
+            {{list(after_landing)}}
+            {{list(shutdown)}}
+            {{list(engine_fire_start)}}
+            {{list(engine_power_loss_in_flight)}}
+        </div>
+        <div class="cut-right"></div>
+        <div class="cut-bottom"></div>
+    </div>
+    <!-- </section> -->
+</body>
+
+</html>

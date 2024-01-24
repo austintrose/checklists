@@ -1,0 +1,403 @@
+# TODO
+# - Departure Brief
+# - Enhance w/ northampton lists
+# - Enhance w/ current personal lists
+# - XC plan info
+# - radio examples, flight following from ground/air
+# - stats
+# - pave/imsafe
+
+XXX:
+  title: XXX
+  color: black
+  steps:
+    - "lorem": "ipsum"
+    - "lorem": "ipsum"
+    - "lorem": "ipsum"
+
+bed_frequencies:
+  title: kbed frequencies
+  color: gray
+  steps:
+    - "ATIS": "124.6"
+    - "ground": "121.7"
+    - "tower": "118.5"
+    - "boston approach": "124.4"
+    - "signature": "130.8<br>781-274-0010 "
+
+speeds:
+  title: speeds
+  color: gray
+  steps:
+    - "Never Exceed": "V<sub>NE</sub> 160"
+    - "Max Cruise": "V<sub>NO</sub> 126"
+    - "Maneuver (max gross)": "V<sub>A</sub> 111"
+    - "Maneuver (empty)": "V<sub>A</sub> &nbsp;88"
+    - "Max Flaps Extended": "V<sub>FE</sub> 103"
+    - "Best Rate Climb": "V<sub>Y</sub> &nbsp;79"
+    - "Best Glide": "V<sub>G</sub> &nbsp;73"
+    - "Best Angle Climb": "V<sub>X</sub> &nbsp;63"
+    - "Rotate": "V<sub>R</sub> &nbsp;55"
+    - "Min Control": "V<sub>MC</sub> &nbsp;55"
+    - "Stall Clean": "V<sub>S1</sub> &nbsp;51"
+    - "Stall Flaps": "V<sub>S0</sub> &nbsp;44"
+
+specs:
+  title: specs
+  color: gray
+  steps:
+    - "Glide distance": "1 NM<br>per 550ft"
+    - "Usable fuel tabs/full": "34g/48g"
+    - "Taxi fuel": "1.0g"
+    - "Climb fuel": "12.0 GPH"
+    - "Crosswind": "17 KTS"
+    - "Cruise<br>3000 @ 65%": "2320 RPM<br>103KTS"
+
+cabin:
+  title: cabin
+  color: black
+  steps:
+    - "magnetos": "off, keys out"
+    - "mixture": "cutoff"
+    - "throttle": "closed"
+    - "hobbs & tach": "record"
+    - "documents (SPAROW)": "check"
+    - "flight controls": "release"
+    - "parking brake": "set"
+    - "avionics": "off"
+    - "electrical switches": "off"
+    - "strobes": "on"
+    - "master switch": "prop clear & on"
+    - "fuel gauges": "check"
+    - "annunciator panel": "test"
+    - "exterior lights,<br>pitot heat": "on & check"
+    - "stall horn": "check"
+    - "exterior lights,<br>pitot heat": "off"
+    - "master switch": "off"
+    - "altimeter": "field elevation"
+    - "magnetic compass": "check"
+    - "flight controls": "check"
+    - "flaps": "extend"
+    - "fire extinguisher": "check"
+    - "windows": "check"
+
+right_wing:
+  title: right wing
+  color: black
+  steps:
+    - "general condition": "check & clear"
+    - "flap": "check"
+    - "aileron": "check"
+    - "wingtip": "check"
+    - "tie down/chock": "remove"
+    - "stall strip": "check installed"
+    - "fuel tank vent": "check"
+    - "fuel tank sump": "drain & no drips"
+    - "fuel tank quantity": "check"
+    - "fuel cap & vent": "check"
+    - "main gear & brake": "check"
+    - "fresh air inlet": "check"
+
+
+nose:
+  title: nose
+  color: black
+  steps:
+    - "general condition & leaks": "check"
+    - "right engine compartment": "check"
+    - "oil (max 6, min 5.5)": "check"
+    - "cowling latches-l & r": "secure"
+    - "propeller & spinner": "check"
+    - "alternator belt tension": "check"
+    - "air inlets": "check"
+    - "exhaust pipes (hot?)": "secure"
+    - "nose gear": "check"
+    - "chock": "remove"
+    - "tow bar": "stowed"
+    - "left engine compartment": "check"
+    - "cowling latches-l & r": "secure"
+    - "fuel strainer": "drain & no drips"
+
+left_wing:
+  title: left wing
+  color: black
+  steps:
+    - "general condition": "check & clear"
+    - "fresh air inlet": "check"
+    - "main gear & brake": "check"
+    - "fuel tank vent": "check"
+    - "fuel tank sump": "drain & no drips"
+    - "fuel tank quantity": "check"
+    - "fuel cap & vent": "check"
+    - "tie down/chock": "remove"
+    - "pitot tube 3 holes": "check"
+    - "wingtip": "check"
+    - "aileron": "check"
+    - "flap": "check"
+
+empennage:
+  title: empennage
+  color: black
+  steps:
+    - "general condition": "check"
+    - "fresh air inlet": "clear"
+    - "stabilator": "check & clear"
+    - "trim tab & nut": "check & clear"
+    - "rudder": "check & clear"
+    - "antennas": "check"
+    - "tie down": "remove"
+    - "baggage area": "secure"
+
+passenger_brief:
+  title: passenger_brief
+  color: orange
+  steps:
+    - "<b>S</b>eatbelts": "Usage"
+    - "<b>A</b>ir vents": "Usage"
+    - "<b>F</b>ire extinguisher": "Usage"
+    - "<b>E</b>xits": "Location/Usage"
+    - "<b>T</b>raffic / talking": "Explain"
+    - "<b>Y</b>our questions?": ""
+
+
+before_engine_start:
+  title: before engine start
+  color: green
+  steps:
+    - "tail lock": "in cabin"
+    - "flaps": "retract"
+    - "passenger briefing": "complete"
+    - "seats & belts": "secure"
+    - "fuel selector": "lowest"
+    - "circuit breakers": "check"
+    - "strobes": "on"
+    - "carb heat": "off"
+    - "parking brake": "set"
+
+engine_start:
+  title: engine start
+  color: green
+  steps:
+    - "mixture": "rich"
+    - "throttle": "cold: ¼\"<br>hot: ½\""
+    - "master switches": "on"
+    - "fuel pump": "on"
+    - "prime": "cold: 3-5 sec<br>warm: 2 sec<br>hot: 0 sec"
+    - "propeller area": "clear"
+    - "starter": "engage"
+    - "throttle": "800 rpm"
+    - "oil pressure": "check"
+    - "fuel pump": "off"
+    - "mixture": "lean"
+
+before_taxi:
+  title: before taxi
+  color: green
+  steps:
+    - "avionics": "on"
+    - "transponder": "alt & 1200"
+    - "ATIS": "check & note"
+    - "flight instruments": "set"
+    - "navigation": "set flight plan"
+    - "radio #1": "ground/ctaf"
+    - "radio #2": "121.5"
+    - "lights": "as needed"
+    - "pre taxi briefing": "complete"
+
+pre_taxi_brief:
+  title: pre taxi briefing
+  color: orange
+  steps:
+    - "• Write down ATIS info": ""
+    - "• Pull up taxi diagram": ""
+    - "• State anticipated taxi route": ""
+    - "• Monitor ground before calling": ""
+    - "• Coordinate flight following": ""
+    - "• Write and read back instructions": ""
+
+taxi:
+  title: taxi
+  color: green
+  steps:
+    - "parking brake": "release"
+    - "brakes": "check"
+    - "flight instruments": "check"
+
+engine_runup:
+  title: engine runup
+  color: green
+  steps:
+    - "parking brake": "set"
+    - "oil temp": "green"
+    - "fuel selector": "other tank"
+    - "mixture": "rich below 5k"
+    - "throttle": "2000 rpm"
+    - "magnetos": "max drop 175<br>max diff 50"
+    - "vacuum": "4.8 - 5.2\""
+    - "engine gauges": "check"
+    - "annunciator panel": "test"
+    - "lights, fuel pump<br>& pitot head": "on"
+    - "ammeter": "check"
+    - "lights, fuel pump<br>& pitot head": "off"
+    - "carb heat": "on, drop ~75"
+    - "throttle": "idle"
+    - "carb heat": "off"
+    - "throttle": "1000 rpm"
+    - "flight controls": "check"
+
+before_takeoff:
+  title: before takeoff
+  color: green
+  steps:
+    - "fuel pump": "on"
+    - "pitot heat": "as required"
+    - "flight instruments": "check"
+    - "trims": "both neutral"
+    - "flaps": "normal 0<br>short/soft 2"
+    - "seats & belts": "secure"
+    - "door & window": "secure"
+    - "lights": "on"
+    - "radio": "tower/ctaf"
+    - "mixture": "rich"
+    - "pre takeoff briefing": "complete"
+
+takeoff_brief:
+  title: pre takeoff briefing
+  color: orange
+  steps:
+    - "• Runway to use": ""
+    - "• Wind direction and correction": ""
+    - "• Rotate and climb airspeeds": ""
+    - "• Procedure after takeoff": ""
+    - "• Emergencies": ""
+
+takeoff:
+  title: takeoff
+  color: blue
+  steps:
+    - "mixture": "rich below 5k"
+    - "throttle": "full"
+    - "power": "2330 - 2430 RPM"
+    - "engine gauges": "check"
+    - "airspeed": "check"
+    - "rotate": "normal 55<br>short/soft 52"
+
+climb:
+  title: climb
+  color: blue
+  steps:
+    - "flaps": "retract above 65"
+    - "airspeed (cruise climb)": "87 / 500'"
+    - "fuel pump": "off & check pressure"
+    - "oil temp & pressure": check
+
+cruise:
+  title: Cruise
+  color: blue
+  steps:
+    - "power": "as required"
+    - "mixture": "lean as required"
+
+fuel_tank_switch:
+  title: Fuel Tank Switch
+  color: blue
+  steps: 
+    - "fuel pump": "on"
+    - "fuel selector": "desired tank"
+    - "fuel pressure": "check"
+    - "fuel pump": "off"
+
+descent:
+  title: Descent
+  color: blue
+  steps:
+    - "power": "as required"
+    - "mixture": "as required"
+    - "carb heat": "as required"
+    - "seats & belts": "upright & secure"
+
+approach_and_landing:
+  title: "Approach & Landing"
+  color: blue
+  steps:
+    - "downwind": "90 kts"
+    - "fuel pump": "on"
+    - "fuel selector": "fullest tank"
+    - "mixture": "rich below 5k"
+    - "carb heat": "off on final"
+    - "flaps": "under 103 kias"
+    - "landing (0°)": "70 kias"
+    - "landing (40°)": "63 kias"
+
+after_landing:
+  title: "AFTER LANDING & CLEAR OF RUNWAY"
+  color: green
+  steps:
+    - "radio": "ground/ctaf"
+    - "RPM": "1000"
+    - "lights": "as appropriate"
+    - "flaps": "retract"
+    - "fuel pump": "off"
+    - "carb heat": "off"
+    - "mixture": "lean"
+    - "pitot heat": "off"
+    - "transponder": "1200"
+
+
+shutdown:
+  title: shutdown
+  color: green
+  steps:
+    - "call for fuel": "as required"
+    - "avionics/radio master": "off"
+    - "throttle": "idle"
+    - "mixture": "cutoff"
+    - "magnetos": "off, key out"
+    - "electrical switches": "off"
+    - "strobes": "leave on"
+    - "master & alt switches": "off"
+    - "hobbs & tach": "record"
+    - "flight controls": "secure"
+    - "PARKING BRAKE": "released"
+    - "tie downs / chocks": "in place / secure"
+    - "cover": "on"
+
+    
+engine_fire_start:
+  title: "engine fire on start"
+  color: red
+  steps:
+    - "starter": "continue cranking"
+    - "mixture": "cutoff"
+    - "throttle": "open"
+    - "fuel pump": "off"
+    - "fuel selector": "off"
+
+engine_power_loss_in_flight:
+  title: "engine power loss in flight"
+  color: red
+  steps:
+    - "Fuel selector": "FULLEST TANK"
+    - "Fuel pump": "ON"
+    - "Mixture": "RICH"
+    - "Carb heat": "ON"
+    - "Magnetos": "BOTH"
+    - "Engine gauges": "CHECK"
+
+power_off_landing:
+  title: "power off landing"
+  color: red
+  steps:
+    - "trim for best glide": "73 kias"
+    - "landing area": "identify"
+    - "elt": "activate"
+    - "radio": "mayday"
+    - "transponder": "7700"
+    - "final approach (40°)": "63 kias"
+    - "magnetos": "off"
+    - "master switch": "off"
+    - "alternator switch": "off"
+    - "fuel selector": "off"
+    - "mixture": "cutoff"
+    - "seatbelts": "secure"
+    - "door": "unlatch"

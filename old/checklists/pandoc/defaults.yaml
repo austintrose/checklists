@@ -1,4 +1,5 @@
 pdf-engine: weasyprint
 template: checklist
-css: ./checklist.css
+css: ./css/checklist.css
 data-dir: ./pandoc
+verbosity: ERROR

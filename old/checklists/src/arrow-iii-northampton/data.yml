@@ -1,0 +1,617 @@
+reference:
+  speeds:
+    title: "Speeds"
+    kwargs:
+      heading_class: grey-heading
+    steps:
+      - "Vg (gear up, 0°, prop low)": "79 KIAS"
+      - "Va (2750/1865 lbs)": "118/96 KIAS"
+      - "Vfe": "103 KIAS"
+      - "Vlo (retract, extend)": "107,129 KIAS"
+      - "Vle": "129 KIAS"
+      - "Vy (gear down,0°)": "78 KIAS"
+      - "Vy (gear up,0°)": "90 KIAS"
+      - "Vx (gear down,25°)": "62 KIAS"
+      - "Vx (gear down,0°)": "72 KIAS"
+      - "Vx (gear up,0°)": "78 KIAS"
+      - "Vs0": "55 KIAS"
+      - "Vs1": "60 KIAS"
+    # 3.3a STALL SPEEDS
+    #   2750 lbs(Gear Up, 0 Flap) 60 KIAS
+    #   2750 lbs(Gear Down, 40 Flap) 55 KIAS
+    # 3.3b MANEUVERING SPEEDS
+    #   27501bs 118 KIAS
+    #   1865 lbs 96KIAS
+    # 3.3c NEVER EXCEED SPEED
+    #   Never Exceed Speed 183 KIAS
+    # 3.3d POWER OFF GLIDE SPEED
+    #   2750 lbs(Gear Up, 0 Flap) 79 KIA
+
+  frequencies:
+    title: "TODO - Frequencies"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  specs:
+    title: "TODO - Specs"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "weight, fuel capacity": ""
+
+maneuvers:
+  pre_maneuver_checks:
+    title: "TODO - pre_maneuver_checks"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  steep_turns:
+    title: "TODO - steep_turns"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  slow_flight:
+    title: "TODO - slow_flight"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  accelerated_stall:
+    title: "TODO - accelerated_stall"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  power_off_stall:
+    title: "TODO - power_off_stall"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  power_on_stall:
+    title: "TODO - power_on_stall"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  emergency_descent:
+    title: "TODO - emergency_descent"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+emergency:
+  engine_fire_on_start:
+    title: "TODO - engine_fire_on_start"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  manual_gear_extension:
+    title: "TODO - manual_gear_extension"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  engine_power_loss_takeoff:
+    title: "TODO - engine_power_loss_takeoff"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  engine_power_loss_in_flight:
+    title: "TODO - engine_power_loss_in_flight"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  power_off_landing_gear_down:
+    title: "TODO - power_off_landing_gear_down"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  power_off_landing_gear_up:
+    title: "TODO - power_off_landing_gear_up"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  engine_roughness:
+    title: "TODO - engine_roughness"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  engine_fire_in_flight:
+    title: "TODO - engine_fire_in_flight"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  electrical_cabin_fire:
+    title: "TODO - electrical_cabin_fire"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  loss_oil_pressure:
+    title: "TODO - loss_oil_pressure"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  loss_fuel_flow_or_pressure:
+    title: "TODO - loss_fuel_flow_or_pressure"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  high_oil_temp:
+    title: "TODO - high_oil_temp"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  electrical_failure:
+    title: "TODO - electrical_failure"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  electrical_overload:
+    title: "TODO - electrical_overload"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  prop_overspeed:
+    title: "TODO - prop_overspeed"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+preflight:
+  cockpit_safety_check:
+    kwargs:
+      heading_class: red-heading
+      item_class: safety
+    title: Cockpit Safety Check
+    steps:
+      - "Magnetos": "OFF, KEYS ON DASH"
+      - "Mixture": "CUTOFF"
+      - "Throttle": "CLOSED"
+
+  cabin:
+    title: Cabin
+    steps:
+      - "Documents (SPAROW)": "CHECK"
+      - "Flight controls": "RELEASE"
+      - "Gear selector": "DOWN"
+      - "Parking brake": "SET"
+      - "Avionics": "OFF"
+      - "Electric switches": "OFF"
+      - "Master switch": "ON"
+      - "Gear lights": "3 GREEN"
+      - "Fuel gauges": "CHECK"
+      - "Aux vacuum pump": "CHECK"
+      - "Pitot heat switch": "ON"
+      - "Landing light switch": "ON"
+      - "Anti-collision lights switch": "ON"
+
+  electrical:
+    title: Electrical
+    steps:
+      - "Right position & strobe lights": "ON"
+      - "Landing light": "ON"
+      - "Stall horn": "AUDIBLE"
+      - "Pitot head": "WARM & CLEAR"
+      - "Left position & strobe lights": "ON"
+      - "Tail position & beacon lights": "ON"
+      - "Pitot heat switch": "OFF"
+      - "Landing light switch": "OFF"
+      - "Anti-collision lights switch": "OFF"
+      - "Annunciator panel": "TEST"
+      - "Master switch": "OFF"
+      - "Altimeter": "FIELD ELEVATION"
+      - "Magnetic compass": "CHECK"
+      - "Pitot & static drains": "DRAIN"
+      - "Flight controls": "CHECK"
+      - "Flaps": "EXTEND"
+      - "Fire extinguisher": "CHECK"
+      - "Windows": "CHECK & CLEAN"
+
+  right_wing:
+    title: Right Wing
+    steps:
+      - "General condition": "CHECK & CLEAR"
+      - "Flap": "CHECK"
+      - "Aileron": "CHECK"
+      - "Static wicks": "CHECK"
+      - "Wingtip": "CHECK"
+      - "Tie down/chock": "REMOVE"
+      - "Fuel tank vent": "CHECK"
+      - "Fuel tank sump": "DRAIN & CHECK"
+      - "Fuel tank": "CHECK"
+      - "Fuel cap": "CHECK & SECURE"
+      - "Main gear": "CHECK"
+      - "Fresh air inlet": "CHECK"
+
+  nose:
+    title: Nose
+    steps:
+      - "Oil (max 6, min 5.5)": "CHECK"
+      - "Propeller & spinner": "CHECK"
+      - "Alternator belt": "CHECK"
+      - "Right Cowling": "SECURE"
+      - "Intake cover": "REMOVE"
+      - "Engine heater": "UNPLUG"
+      - "Air inlets": "CLEAR"
+      - "Nose gear": "CHECK"
+      - "Chock": "REMOVE"
+      - "Left Cowling": "SECURE"
+      - "Fuel strainer": "DRAIN & CHECK"
+      - "OAT Probe": "CLEAR"
+
+  left_wing:
+    title: Left Wing
+    steps:
+      - "General condition": "CHECK & CLEAR"
+      - "Fresh air inlet": "CHECK"
+      - "Main gear": "CHECK"
+      - "Fuel tank vent": "CHECK"
+      - "Fuel tank sump": "DRAIN & CHECK"
+      - "Fuel tank": "CHECK"
+      - "Fuel cap": "CHECK & SECURE"
+      - "Tie down/chock": "REMOVE"
+      - "Pitot tube 3 holes": "CLEAR"
+      - "Wingtip": "CHECK"
+      - "Aileron": "CHECK"
+      - "Flap": "CHECK"
+      - "Static wicks": "CHECK"
+
+  body:
+    title: Body
+    steps:
+      - "Antennas": "INTACT"
+      - "Left fuselage": "CHECK FOR DAMAGE"
+      - "Left static port": "CLEAR"
+      - "Fresh air inlet": "CLEAR"
+      - "Stabilator": "CHECK & CLEAR"
+      - "Trim tab": "CHECK & CLEAR"
+      - "Rudder": "CHECK & CLEAR"
+      - "Tie down / chain": "REMOVE"
+      - "Right fuselage": "CHECK FOR DAMAGE"
+      - "Right static port": "CLEAR"
+      - "Baggage area": "CLOSE & SECURE"
+
+  finish:
+    title: Finish
+    steps:
+      - "Tail Lock": "IN COCKPIT"
+      - "Flaps": "RETRACT"
+      - "Hobbs & Tach": "RECORD"
+      - "Seat": "ADJUST & SECURE"
+      - "Sentry/iPad/Kneeboard": "ADJUST & SECURE"
+      - "Fuel": "ADD AS NEEDED"
+      - "Passengers": "BOARD"
+
+  personal:
+    title: "TODO: Personal Checklist"
+    kwargs:
+      heading_class: orange-heading
+    steps: 
+      - "PAVE": ""
+      - "IMSAFE": ""
+
+  passenger_briefing:
+    title: Passenger Briefing
+    kwargs:
+      heading_class: orange-heading
+    steps:
+      - "<b>S</b> - Seatbelts": "Usage"
+      - "<b>A</b> - Air vents": "Usage"
+      - "<b>F</b> - Fire extinguisher": "Usage"
+      - "<b>E</b> - Exits": "Location/Usage"
+      - "<b>T</b> - Traffic / talking": "Explain"
+      - "<b>Y</b> - Any questions?": ""
+
+  before_engine_start:
+    title: Before Engine Start
+    kwargs:
+      heading_class: green-heading
+    steps:
+      - "Preflight": "COMPLETE"
+      - "Passenger briefing": "COMPLETE"
+      - "Seats & seat belts": "SECURE"
+      - "Fuel selector": "LOWEST TANK"
+      - "Avionics / Electrical": "OFF"
+      - "Circuit breakers": "CHECK"
+      - "Alternate air": "OFF"
+      - "Strobes": "ON"
+      - "Propeller": "MAX RPM"
+      - "Brakes": "SET & HOLD"
+
+  normal_start_cold:
+    title: "Normal Engine Start: Cold"
+    kwargs:
+      heading_class: green-heading
+    steps:
+      - "TODO": ""
+
+  normal_start_hot:
+    title: "Normal Engine Start: Hot"
+    kwargs:
+      heading_class: green-heading
+    steps:
+      - "TODO": ""
+
+  flooded_start:
+    title: "Flooded Engine Start"
+    kwargs:
+      heading_class: green-heading
+    steps:
+      - "TODO": ""
+
+  engine_start:
+    title: Engine Start
+    kwargs:
+      heading_class: green-heading
+    steps:
+      - "Throttle": "½” OPEN"
+      - "Master & Alt switches": "ON"
+      - "Fuel pump": "ON"
+      - "Mixture if cold": "RICH 3-5 SECS"
+      - "Mixture": "CUT OFF"
+      - "Propeller area": "CLEAR"
+      - "Starter": "ENGAGE"
+      - "Mixture": "RICH"
+      - "Throttle": "800 RPM"
+      - "Oil pressure": "CHECK"
+      - "Fuel pump": "OFF"
+      - "Mixture": "LEAN"
+
+  before_taxi:
+    title: Before Taxi
+    kwargs:
+      heading_class: green-heading
+    steps:
+      - "Avionics/Radio master": "ON"
+      - "Transponder (1200 VFR)": "ALT"
+      - "Radios": "SET"
+      - "ATIS": "CHECK"
+      - "Flight instruments": "SET"
+      - "Lights": "AS APPROPRIATE"
+      - "Navigation": "SET"
+      - "Radio": "CLNC, GROUND/CTAF"
+      - "#2 Radio": "MONITOR 121.5"
+
+  taxi:
+    title: Taxi
+    kwargs:
+      heading_class: green-heading
+    steps:
+      - "Parking Brake": "RELEASE"
+      - "Brakes": "CHECK"
+      - "Flight instruments": "CHECK"
+
+  engine_runup:
+    title: Engine Runup
+    kwargs:
+      heading_class: green-heading
+    steps:
+      - "Brakes": "SET & HOLD"
+      - "Oil Temp": "IN THE GREEN"
+      - "Fuel selector": "OTHER TANK"
+      - "Mixture (below 5000’)": "RICH"
+      - "Throttle": "2000 RPM"
+      - "Mags (drop 175,diff 50)": "CHECK"
+      - "Vacuum (4.8-5.1”)": "CHECK"
+      - "Engine gauges": "CHECK"
+      - "Ammeter": "CHARGING LTS & pitot on/off"
+      - "Annunciator panel": "TEST"
+      - "Alternate air": "CHECK"
+      - "Propeller (max 500 drop)": "CYCLE 3x"
+      - "Throttle (min 500 RPM)": "IDLE"
+      - "Throttle": "1000 RPM"
+      - "Flight controls": "CHECK"
+
+  before_takeoff:
+    title: Before Takeoff
+    kwargs:
+      heading_class: green-heading
+    steps:
+      - "Fuel pump": "ON"
+      - "Propeller": "MAX RPM"
+      - "Pitot heat": "AS REQUIRED"
+      - "Flight instruments": "CHECK"
+      - "Trims X 2": "TAKEOFF"
+      - "Flaps": "NORMAL 0°, SHORT/SOFT 25°"
+      - "Seats & seat belts": "SECURE"
+      - "Door & window": "SECURE"
+      - "Lights": "ON"
+      - "Takeoff briefing": "COMPLETE"
+      - "Air conditioning": "OFF"
+      - "Radio": "TOWER/CTAF"
+
+  takeoff_brief:
+    title: Takeoff Brief
+    kwargs:
+      heading_class: orange-heading
+    steps:
+      - "TODO": ""
+
+normal:
+  runway_entry:
+    title: "TODO - Runway Entry"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  normal_takeoff:
+    title: Normal Takeoff
+    kwargs:
+      heading_class: blue-heading
+    steps:
+      - "Mixture (below 5000’)": "RICH"
+      - "Throttle": "FULL"
+      - "Power": "CHECK"
+      - "Engine gauges": "CHECK"
+      - "Airspeed": "CHECK"
+      - "Rotate 0°/25°": "71/59 KIAS"
+
+  short_field_takeoff:
+    title: "TODO - Short Field Takeoff"
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  climb:
+    title: Climb
+    kwargs:
+      heading_class: blue-heading
+    steps:
+      - "Gear": "UP"
+      - "Flaps": "RETRACT AT SAFE SPEED (60 KIAS)"
+      - "Airspeed (cruise climb)": "104 KIAS/500FPM"
+      - "Fuel pump": "OFF"
+      - "Fuel pressure": "CHECK"
+
+  cruise:
+    title: Cruise
+    kwargs:
+      heading_class: blue-heading
+    steps:
+      - "Power & Propeller": "AS REQUIRED"
+      - "Mixture": "LEAN AS REQUIRED"
+
+  fuel_tank_switch:
+    title: Fuel Tank Switch
+    kwargs:
+      heading_class: blue-heading
+    steps:
+      - "Fuel pump": "ON"
+      - "Fuel selector": "DESIRED TANK"
+      - "Fuel pressure": "CHECK"
+      - "Fuel pump": "OFF"
+
+  descent_and_approach:
+    title: Descent / Approach
+    kwargs:
+      heading_class: blue-heading
+    steps:
+      - "Power & Propeller": "AS REQUIRED"
+      - "Mixture": "AS REQUIRED"
+      - "Seats & seat belts": "UPRIGHT & SECURE"
+
+  approach_and_landing:
+    title: Approach / Landing
+    kwargs:
+      heading_class: blue-heading
+    steps:
+      - "Downwind": "90 KTS"
+      - "Air conditioning": "OFF"
+      - "Fuel pump": "ON"
+      - "Fuel selector": "FULLEST TANK"
+      - "Mixture (below 5000’)": "RICH"
+      - "Propeller": "MAX RPM"
+      - "Gear (<129 KIAS)": "DOWN"
+      - "Flaps (<103 KIAS)": "AS REQUIRED"
+      - "Landing (0°)": "78 KIAS"
+      - "Landing (40°)": "72 KIAS"
+
+  landing:
+    title: TODO - Landing
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  short_field_landing:
+    title: TODO - short_field_landing
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  soft_field_landing:
+    title: TODO - soft_field_landing
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  go_around:
+    title: TODO - go_around
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  missed_approach:
+    title: TODO - missed_approach
+    kwargs:
+      heading_class: ceilblue-heading
+    steps:
+      - "": ""
+
+  after_landing:
+    title: After Landing
+    kwargs:
+      heading_class: green-heading
+    steps:
+      - "Radio": "GROUND/CTAF"
+      - "RPM": "1000"
+      - "Flaps": "RETRACT"
+      - "Fuel pump": "OFF"
+      - "Mixture": "LEAN"
+      - "Lights": "AS REQUIRED"
+      - "Pitot Heat": "OFF"
+    
+  shutdown:
+    title: Shutdown
+    steps:
+      - "Call for fuel": "AS REQUIRED"
+      - "Air conditioning": "OFF"
+      - "Avionics/Radio master": "OFF"
+      - "Throttle": "IDLE"
+      - "Mixture": "CUTOFF"
+
+  when_prop_stops:
+    title: When Prop Stops
+    steps:
+      - "Magnetos": "OFF, KEY OUT"
+      - "Electrical switches": "OFF"
+      - "Master & Alt switches": "OFF"
+      - "Hobbs & tach": "RECORD"
+      - "Flight controls": "SECURE"
+      - "Tie downs": "SECURE"
+      - "Cover": "ON"
