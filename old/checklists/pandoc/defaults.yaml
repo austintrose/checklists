@@ -1,5 +1,0 @@
-pdf-engine: weasyprint
-template: checklist
-css: ./css/checklist.css
-data-dir: ./pandoc
-verbosity: ERROR

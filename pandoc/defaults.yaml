@@ -1,4 +1,0 @@
-pdf-engine: weasyprint
-template: checklist
-css: ./checklist.css
-data-dir: ./pandoc
