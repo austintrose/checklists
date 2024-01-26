@@ -14,9 +14,15 @@
   {% for i in details.steps %}
   {% for k, v in i|items %}
   <div class="row">
+    {% if v %}
     <div class="col left">{{k}}</div>
     <div class="col middle"></div>
     <div class="col right">{{v}}</div>
+    {% else %}
+    <div class="col middle">
+      <div class="bold">{{k}}</div>
+    </div>
+    {% endif %}
   </div>
   {% endfor %}
   {% endfor %}
@@ -25,7 +31,9 @@
 
 {% macro briefing(details) %}
 <div class="checklist briefing">
+  {% if details.title %}
   <div class="section-title">{{details.title}}</div>
+  {% endif %}
   {% for i in details.steps %}
   <div class="row">
     <div class="col middle">
@@ -41,31 +49,42 @@
     </div>
   </div>
   {% endfor %}
+  {% if details.radio %}
+  <div class="row">
+    <div class="col middle">
+      <div class="radio">{{details.radio}}</div>
+    </div>
+  </div>
+  {% endif %}
 </div>
-
-{# 
-AIR VENT LOCATIONS AND CONTROLS
-Speak up if you are feeling airsick or unwell, and we will return promptly. If you think you may throw up, there is a sick-bag available: throwing up on the controls or instrument panel could be dangerous."
-There is no fire extinguisher onboard. In the unlikely event of a fire I will follow pre-established emergency procedures and land as soon as possible.
-
-"DEMONSTRATE EXIT LOCATION & MECHANISM
-Do not attempt to open the door until the plane is parked and the propeller stopped. When exiting, always exit away from the propeller."
-"We will observe a ""sterile cockpit"" during critical phases of flight, which means no unnecessary talking or distractions during taxi, takeoff, and landing.
-This flight will follow Visual Flight Rules, meaning I am responsible for seeing and avoiding any other traffic. If you spot another aircraft, go ahead and point it out."
-Do you have any questions? 
-#}
 {% endmacro %}
 
 
 <body>
+
   <div class="paper">
     <div class="page left">
-      <div class="column left">
+      <div class="column single">
         <div class="title">Piper Warrior III</div>
         <div class="subtitle">PA-28-161</div>
         <div class="subtitle">Bedford Checklists</div>
-      </div>
-      <div class="column right">
+        <p>XC plan items:</p>
+        <ul>
+          <li>Airports: frequencies, runways, field altitude, pattern altitude</li>
+          <li>Cruising altitude, time to descend</li>
+          <li>Total weight</li>
+          <li>Endurance</li>
+        </ul>
+        <p>Last flight review, next required</p>
+        <p>Medical expire date</p>
+        <p>Warrior II with primer: primer in and locked</p>
+        <p>Add to list: everything from flight bag... sentry, ipad, pair with sentry/stratus, </p>
+        <p>buy energizer aa lithium</p>
+        <p>reminder or alarm or pnemonic for switching fuel tanks... like on approach freq change</p>
+        <p>keys on dash</p>
+        <p>preflight checklist no need to be accessible in flight in book</p>
+        <p>create dedicated radio block macro, not part of briefing</p>
+        <p>dont use same classes for briefing and checklist, simpler CSS</p>
       </div>
     </div>
     <div class="page right">
@@ -80,6 +99,7 @@ Do you have any questions?
       </div>
     </div>
   </div>
+
   <div class="paper">
     <div class="page left">
       <div class="column left">
@@ -99,9 +119,39 @@ Do you have any questions?
         {{checklist(data.before_takeoff)}}
       </div>
       <div class="column right">
+        {{briefing(data.pre_takeoff_brief)}}
+        {{checklist(data.takeoff)}}
       </div>
     </div>
   </div>
+
+  <div class="paper">
+    <div class="page left">
+      <div class="column left">
+        {{checklist(data.climb)}}
+        {{checklist(data.cruise)}}
+        {{checklist(data.fuel_tank_switch)}}
+        {{checklist(data.descent)}}
+        {{checklist(data.approach_and_landing)}}
+      </div>
+      <div class="column right">
+        {{checklist(data.after_landing)}}
+        {{briefing(data.after_landing_radio)}}
+        {{checklist(data.shutdown)}}
+      </div>
+    </div>
+    <div class="page right">
+      <div class="column left">
+        {{checklist(data.emergency.engine_fire_start)}}
+        {{checklist(data.emergency.engine_power_loss_in_flight)}}
+        {{checklist(data.emergency.engine_roughness)}}
+      </div>
+      <div class="column right">
+        {{checklist(data.emergency.power_off_landing)}}
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>

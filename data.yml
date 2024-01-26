@@ -1,22 +1,19 @@
 # TODO
-# - Departure Brief
 # - Enhance w/ northampton lists
 # - Enhance w/ current personal lists
+# - Enhance w/ POH
 # - XC plan info
 # - radio examples, flight following from ground/air
 # - stats
 # - pave/imsafe
 # Bedford stats add field elevation
 
-# Removed, ensure exists somewhere:
-# - "Annunciator panel": "check"
-# - "Trim": "check, neutral"
 preflight:
   cockpit:
     title: "preflight: cockpit"
     class: "preflight"
     steps:
-      - "magnetos": "off, keys out"
+      - "magnetos": "off, keys on dash"
       - "mixture": "idle cut-off"
       - "throttle": "closed"
       - "hobbs & tach": "record"
@@ -118,7 +115,7 @@ passenger_safety_brief:
     - bold: Seatbelts
       ital: Demonstrate usage
       ul:
-        - "Required in taxi, takeoff, and landing."
+        - "Required for taxi, takeoff, landing."
         - "Please keep on for entire flight."
     - bold: Air Vents / Sickness
       ital: Point out and demonstrate
@@ -174,7 +171,8 @@ before_taxi:
     - "avionics": "on"
     - "transponder": "alt & 1200"
     - "passenger headsets": "set up & check"
-    - "flight instruments": "set"
+    - "attitude gyro": "align"
+    - "directional gyro": "align"
     - "navigation": "set flight plan"
     - "ATIS": "check & note"
     - "radio #1": "ground/ctaf"
@@ -189,13 +187,18 @@ pre_taxi_brief:
       ital: "Listen and write down"
     - bold: Taxi diagram
       ital: "Pulled up for reference"
-    - bold: Ground clearance 
+    - bold: Ground clearance
       ul:
         - "Monitor before calling"
         - "Anticipate taxi route"
-        - "Coordinate flight following"
-        - "Rehearse request"
         - "Write and read back instructions"
+  radio: |
+    <span>name</span> ground
+    <br> ... <span>tail</span> at <span>area</span>
+    <br> ... VFR <span>direction</span> with <span>atis-id</span>
+    <br> ... request flight following to
+    <br> ... <span>destination</span>
+
 
 taxi:
   title: taxi
@@ -238,151 +241,193 @@ before_takeoff:
     - "flaps": "normal 0<br>short/soft 2"
     - "seats & belts": "secure"
     - "door & window": "secure"
-    - "pre takeoff briefing": "complete"
     - "radio": "tower/ctaf"
     - "lights": "on"
     - "mixture": "rich"
+    - "pre takeoff briefing": "complete"
 
-# takeoff_brief:
-#   title: pre takeoff briefing
-#   color: orange
-#   steps:
-#     - "• Runway to use": ""
-#     - "• Wind direction and correction": ""
-#     - "• Rotate and climb airspeeds": ""
-#     - "• Procedure after takeoff": ""
-#     - "• Emergencies": ""
+pre_takeoff_brief:
+  title: Pre Takeoff Briefing
+  steps:
+    - bold: Runway
+    - bold: Wind
+      ital: "Direction & correction"
+    - bold: Speeds
+      ital: "Rotation & climb"
+    - bold: Procedure
+      ital: "Turns & altitudes"
+    - bold: Emergencies
+      ul:
+        - Sufficient runway
+        - Insufficient runway, insufficient altitude
+        - Sufficient altitude
+    - bold: Tower clearance
+      ul:
+        - "Monitor before calling"
+        - "Read back instructions"
+  radio: |
+    <span>name</span> tower
+    <br> ... <span>tail</span> holding short of <span>runway</span>
+    <br> ... ready for takeoff
 
-# takeoff:
-#   title: takeoff
-#   color: blue
-#   steps:
-#     - "mixture": "rich below 5k"
-#     - "throttle": "full"
-#     - "power": "2330 - 2430 RPM"
-#     - "engine gauges": "check"
-#     - "airspeed": "check"
-#     - "rotate": "normal 55<br>short/soft 52"
+takeoff:
+  title: takeoff
+  class: air
+  steps:
+    - "mixture": "rich below 5k"
+    - "throttle": "full"
+    - "power": "2330 - 2430 RPM"
+    - "engine gauges": "check"
+    - "airspeed": "alive"
+    - "rotate": "normal 55 kias<br>short/soft 52 kias"
 
-# climb:
-#   title: climb
-#   color: blue
-#   steps:
-#     - "flaps": "retract above 65"
-#     - "airspeed (cruise climb)": "87 / 500'"
-#     - "fuel pump": "off & check pressure"
-#     - "oil temp & pressure": check
+climb:
+  title: climb
+  class: air
+  steps:
+    - "flaps": "retract at 65 kias"
+    - "fuel pump": "off & check<br>pressure"
+    - "oil temp & pressure": check
+    - "airspeed<br>(cruise climb)": "87 kias <br> 500'/min"
 
-# cruise:
-#   title: Cruise
-#   color: blue
-#   steps:
-#     - "power": "as required"
-#     - "mixture": "lean as required"
+cruise:
+  title: Cruise
+  class: air
+  steps:
+    - "throttle": "cruise power"
+    - "mixture": "lean"
 
-# fuel_tank_switch:
-#   title: Fuel Tank Switch
-#   color: blue
-#   steps: 
-#     - "fuel pump": "on"
-#     - "fuel selector": "desired tank"
-#     - "fuel pressure": "check"
-#     - "fuel pump": "off"
+fuel_tank_switch:
+  title: Fuel Tank Switch
+  class: air
+  steps:
+    - "fuel pump": "on"
+    - "fuel selector": "desired tank"
+    - "fuel pressure": "check"
+    - "fuel pump": "off"
 
-# descent:
-#   title: Descent
-#   color: blue
-#   steps:
-#     - "power": "as required"
-#     - "mixture": "as required"
-#     - "carb heat": "as required"
-#     - "seats & belts": "upright & secure"
+descent:
+  title: Descent
+  class: air
+  steps:
+    - "power": "as required"
+    - "mixture": "as required"
+    - "carb heat": "as required"
+    - "seats & belts": "upright & secure"
 
-# approach_and_landing:
-#   title: "Approach & Landing"
-#   color: blue
-#   steps:
-#     - "downwind": "90 kts"
-#     - "fuel pump": "on"
-#     - "fuel selector": "fullest tank"
-#     - "mixture": "rich below 5k"
-#     - "carb heat": "off on final"
-#     - "flaps": "under 103 kias"
-#     - "landing (0°)": "70 kias"
-#     - "landing (40°)": "63 kias"
+approach_and_landing:
+  title: "Approach & Landing"
+  class: air
+  steps:
+    - "downwind": "90 kts"
+    - "fuel pump": "on"
+    - "fuel selector": "fullest tank"
+    - "mixture": "rich below 5k"
+    - "carb heat": "off on final"
+    - "flaps": "under 103 kias"
+    - "landing (0°)": "70 kias"
+    - "landing (40°)": "63 kias"
 
-# after_landing:
-#   title: "AFTER LANDING & CLEAR OF RUNWAY"
-#   color: green
-#   steps:
-#     - "radio": "ground/ctaf"
-#     - "RPM": "1000"
-#     - "lights": "as appropriate"
-#     - "flaps": "retract"
-#     - "fuel pump": "off"
-#     - "carb heat": "off"
-#     - "mixture": "lean"
-#     - "pitot heat": "off"
-#     - "transponder": "1200"
+after_landing:
+  title: "AFTER LANDING & OFF RUNWAY"
+  class: ground
+  steps:
+    - "radio": "ground / ctaf"
+    - "RPM": "1000"
+    - "lights": "as appropriate"
+    - "flaps": "retract"
+    - "fuel pump": "off"
+    - "carb heat": "off"
+    - "mixture": "lean"
+    - "pitot heat": "off"
+    - "transponder": "1200"
 
+after_landing_radio:
+  steps:
+    - bold: Ground clearance
+      ul:
+        - "Tower instructions to exit runway"
+        - "Switch to ground, shorthand 121.XX"
+        - "Write and read back instructions"
+        - "Can request 'transient parking'"
+  radio: |
+    <span>name</span> ground
+    <br> ... <span>tail</span> at <span>taxiway</span>
+    <br> ... taxi to <span>destination</span> 
 
-# shutdown:
-#   title: shutdown
-#   color: green
-#   steps:
-#     - "call for fuel": "as required"
-#     - "avionics/radio master": "off"
-#     - "throttle": "idle"
-#     - "mixture": "cutoff"
-#     - "magnetos": "off, key out"
-#     - "electrical switches": "off"
-#     - "strobes": "leave on"
-#     - "master & alt switches": "off"
-#     - "hobbs & tach": "record"
-#     - "flight controls": "secure"
-#     - "PARKING BRAKE": "released"
-#     - "tie downs / chocks": "in place / secure"
-#     - "cover": "on"
+shutdown:
+  title: shutdown
+  class: ground
+  steps:
+    - "call for fuel": "as required"
+    - "avionics/radio master": "off"
+    - "throttle": "idle"
+    - "mixture": "cutoff"
+    - "propeller": "stopped"
+    - "magnetos": "off, key out"
+    - "electrical switches": "off"
+    - "strobes": "leave on"
+    - "master & alt switches": "off"
+    - "hobbs & tach": "record"
+    - "flight controls": "secure"
+    - "PARKING BRAKE": "released"
+    - "tie downs / chocks": "in place / secure"
+    - "cover": "on"
 
-    
-# engine_fire_start:
-#   title: "engine fire on start"
-#   color: red
-#   steps:
-#     - "starter": "continue cranking"
-#     - "mixture": "cutoff"
-#     - "throttle": "open"
-#     - "fuel pump": "off"
-#     - "fuel selector": "off"
+emergency:
+  engine_fire_start:
+    title: "engine fire on start"
+    class: emergency
+    steps:
+      - "starter": "continue cranking"
+      - "mixture": "cutoff"
+      - "throttle": "open"
+      - "fuel pump": "off"
+      - "fuel selector": "off"
 
-# engine_power_loss_in_flight:
-#   title: "engine power loss in flight"
-#   color: red
-#   steps:
-#     - "Fuel selector": "FULLEST TANK"
-#     - "Fuel pump": "ON"
-#     - "Mixture": "RICH"
-#     - "Carb heat": "ON"
-#     - "Magnetos": "BOTH"
-#     - "Engine gauges": "CHECK"
+  engine_power_loss_in_flight:
+    title: "engine power loss in flight"
+    class: emergency
+    steps:
+      - "fuel selector": "fullest tank"
+      - "fuel pump": "on"
+      - "mixture": "rich"
+      - "carb heat": "on"
+      - "magnetos": "both"
+      - "engine gauges": "check"
 
-# power_off_landing:
-#   title: "power off landing"
-#   color: red
-#   steps:
-#     - "trim for best glide": "73 kias"
-#     - "landing area": "identify"
-#     - "elt": "activate"
-#     - "radio": "mayday"
-#     - "transponder": "7700"
-#     - "final approach (40°)": "63 kias"
-#     - "magnetos": "off"
-#     - "master switch": "off"
-#     - "alternator switch": "off"
-#     - "fuel selector": "off"
-#     - "mixture": "cutoff"
-#     - "seatbelts": "secure"
-#     - "door": "unlatch"
+  power_off_landing:
+    title: "power off landing"
+    class: emergency
+    steps:
+      - "trim for best glide": "73 kias"
+      - "landing area": "identify"
+      - "ELT": "activate"
+      - "radio": "121.5, mayday"
+      - "transponder": "7700"
+      - "final approach (40°)": "63 kias"
+      - "magnetos": "off"
+      - "master switch": "off"
+      - "alternator switch": "off"
+      - "fuel selector": "off"
+      - "mixture": "cutoff"
+      - "seatbelts": "secure"
+      - "door": "unlatch"
+
+  engine_roughness:
+    title: "engine roughness"
+    class: emergency
+    steps:
+      - "carb heat": " on"
+      - "IF STILL ROUGH AFTER ONE MINUTE:": null
+      - "carb heat": " off"
+      - "mixture": " adjust to smoothest"
+      - "fuel pump": " on"
+      - "fuel selector": "switch tanks"
+      - "engine gauges": " check"
+      - "magnetos": " check/select smoothest"
+      - "mixture": " rich"
+      - "land": " as soon as practical"
 
 # bed_frequencies: |
 #   <table class="reference gray">
