@@ -139,7 +139,7 @@ before_engine_start:
   steps:
     - "tail lock": "in cabin"
     - "flaps": "retract"
-    - "passenger briefing": "complete"
+    - "passenger safety briefing": "complete"
     - "seats & belts": "secure"
     - "fuel selector": "lowest tank"
     - "circuit breakers": "check"
@@ -179,6 +179,7 @@ before_taxi:
     - "radio #2": "121.5"
     - "lights": "as needed"
     - "pre taxi briefing": "complete"
+    - "taxi to runway clearance": "received"
 
 pre_taxi_brief:
   title: pre taxi briefing
@@ -192,13 +193,28 @@ pre_taxi_brief:
         - "Monitor before calling"
         - "Anticipate taxi route"
         - "Write and read back instructions"
-  radio: |
-    <span>name</span> ground
-    <br> ... <span>tail</span> at <span>area</span>
-    <br> ... VFR <span>direction</span> with <span>atis-id</span>
-    <br> ... request flight following to
-    <br> ... <span>destination</span>
 
+radio:
+  ground_taxi_runway_clearance:
+    title: "Taxi To Runway Clearance"
+    radio: |
+      <span>airport</span> ground
+      <br> ... <span>tailnum</span> at <span>parking location</span>
+      <br> ... VFR <span>direction</span> with <span>atis-id</span>
+      <br> ... request flight following to
+      <br> ... <span>destination</span>
+  ground_takeoff_clearance:
+    title: "Takeoff Clearance"
+    radio: |
+      <span>airport</span> tower
+      <br> ... <span>tailnum</span> holding short of <span>runway</span>
+      <br> ... ready for takeoff
+  ground_taxi_parking_clearance:
+    title: "Taxi To Parking Clearance"
+    radio: |
+      <span>name</span> ground
+      <br> ... <span>tailnum</span> at <span>taxiway</span>
+      <br> ... taxi to <span>parking location</span> 
 
 taxi:
   title: taxi
@@ -265,10 +281,6 @@ pre_takeoff_brief:
       ul:
         - "Monitor before calling"
         - "Read back instructions"
-  radio: |
-    <span>name</span> tower
-    <br> ... <span>tail</span> holding short of <span>runway</span>
-    <br> ... ready for takeoff
 
 takeoff:
   title: takeoff
@@ -350,10 +362,6 @@ after_landing_radio:
         - "Switch to ground, shorthand 121.XX"
         - "Write and read back instructions"
         - "Can request 'transient parking'"
-  radio: |
-    <span>name</span> ground
-    <br> ... <span>tail</span> at <span>taxiway</span>
-    <br> ... taxi to <span>destination</span> 
 
 shutdown:
   title: shutdown
@@ -419,7 +427,7 @@ emergency:
     class: emergency
     steps:
       - "carb heat": " on"
-      - "IF STILL ROUGH AFTER ONE MINUTE:": null
+      - "IF STILL ROUGH AFTER ONE MINUTE:": ""
       - "carb heat": " off"
       - "mixture": " adjust to smoothest"
       - "fuel pump": " on"
