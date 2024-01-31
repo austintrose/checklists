@@ -8,12 +8,60 @@
 # - pave/imsafe
 # Bedford stats add field elevation
 
+airport:
+  KBED:
+    title: "KBED"
+    alias: "Hanscom"
+    app_dep_alias: "Boston"
+    tpa: "1132 ft"
+    elevation: "132 ft"
+    atis: "124.60"
+    ground: "121.70"
+    tower: "118.50"
+    unicom: "122.95"
+    approach: "124.40<br>279.60"
+    departure: "124.40<br>279.60"
+    runways:
+      "11 - 29": "7011 x 150 ft"
+      "05 - 23": "5107 x 150 ft"
+  KMVY:
+    title: "KMVY"
+    alias: "Vineyard"
+    app_dep_alias: "Boston"
+    tpa: "1054 ft"
+    elevation: "54 ft"
+    atis: "126.25"
+    ground: "124.35"
+    tower: "121.40"
+    unicom: "122.95"
+    approach: "133.75<br>&nbsp;"
+    departure: "133.75<br>&nbsp;"
+    runways:
+      "06 - 24(R)": "5504 x 100 ft"
+      "15 - 33(R)": "3327 x 75 ft"
+
+
+
 preflight:
+  speeds:
+    title: "speeds"
+    class: "preflight mono"
+    steps:
+      - "Maneuver@2440": "V<sub>A&nbsp;</sub> 111"
+      - "Maneuver@1531": "V<sub>A&nbsp;</sub> &nbsp;88"
+      - "Max flaps out": "V<sub>FE</sub> 103"
+      - "Best rate (0°)": "V<sub>Y&nbsp;</sub> &nbsp;79"
+      - "Best angle (0°)": "V<sub>X&nbsp;</sub> &nbsp;63"
+      - "Best angle (25°)": "V<sub>X&nbsp;</sub> &nbsp;57"
+      - "Best glide (0°)": "V<sub>G&nbsp;</sub> &nbsp;73"
+      - "Stall (clean)": "V<sub>S1</sub> &nbsp;51"
+      - "Stall (full flaps)": "V<sub>S0</sub> &nbsp;44"
+
   cockpit:
-    title: "preflight: cockpit"
+    title: "cockpit"
     class: "preflight"
     steps:
-      - "magnetos": "off, keys on dash"
+      - "magnetos": "off &<br>keys on dash"
       - "mixture": "idle cut-off"
       - "throttle": "closed"
       - "hobbs & tach": "record"
@@ -21,129 +69,139 @@ preflight:
       - "control wheel": "release belts"
       - "avionics": "off"
       - "parking brake": "set"
+      - "altimeter": "field<br>elevation"
+      - "magnetic compass": "check"
+      - "flight controls": "check"
+      - "pitot &<br>static drain": "drain &<br>close"
+      - "windows": "check &<br>clean"
+      - "fire extinguisher": "check"
+      - "ipad & sentry": "securely<br>mounted"
       - "strobes switch": "on"
+
+  electrical:
+    title: "electrical"
+    class: "preflight"
+    steps:
       - "master switch": "on"
-      - "landing light & pitot heat": "both on"
       - "fuel quantity gauges": "check"
+      - "landing light switch": "on"
+      - "pitot heat switch": "on"
       - "right wing lights": "check"
       - "landing light": "check"
       - "stall horn": "audible"
       - "pitot head": "warm & clear"
       - "left wing lights": "check"
-      - "landing light & pitot heat": "both off"
+      - "landing light &<br>pitot heat": "both off"
       - "master switch": "off"
-      - "altimeter": "field elevation"
-      - "magnetic compass": "check"
-      - "flight controls": "check"
-      - "pitot & static drain": "drain, close"
-      - "windows": "check, clean"
-      - "fire extinguisher": "check"
       - "flaps": "extend"
 
   right_wing:
-    title: "preflight: right wing"
+    title: "right wing"
     class: "preflight"
     steps:
-      - "wing": "no ice, snow, frost"
-      - "flap & aileron": "check"
+      - "general condition": "check &<br>clear"
+      - "flap": "check"
+      - "aileron": "check"
       - "hinges": "check"
       - "static wicks": "check"
-      - "wing tip and lights": "check"
+      - "wing tip & lights": "check"
       - "fuel vent": "clear"
       - "fuel tank sump": "drain, check"
       - "fuel tank": "check, secure"
-      - "tie down and chock": "remove"
+      - "tie down & chock": "remove"
       - "main gear strut": "4.5\" inflation"
       - "tire & brake": "check"
       - "fresh air inlet": "clear"
 
   nose:
-    title: "preflight: nose"
+    title: "nose"
     class: "preflight"
     steps:
       - "right cowling": "open, no leaks"
       - "oil": "max 6, min 5.5"
       - "dipstick": "secure"
       - "alternator belt": "check tension"
-      - "right cowling latches": "both secure"
+      - "right cowling<br>latches": "both secure"
       - "propeller and spinner": "check"
       - "air inlets": "clear"
       - "exhaust pipes (hot?)": "secure"
       - "nose chock": "remove"
-      - "nose gear strut": "3.25\" inflation"
+      - "nose gear<br>strut": "3.25\" inflation"
       - "nose wheel tire": "check"
       - "tow bar": "stowed"
       - "left cowling": "open, no leaks"
-      - "left cowling latches": "both secure"
+      - "left cowling<br>latches": "both secure"
       - "fuel strainer": "drain, check"
 
   left_wing:
-    title: "preflight: left wing"
+    title: "left wing"
     class: "preflight"
     steps:
-      - "wing": "no ice, snow, frost"
+      - "general condition": "check &<br>clear"
       - "fresh air inlet": "clear"
       - "main gear strut": "4.5\" inflation"
       - "tire & brake": "check"
-      - "tie down and chock": "remove"
+      - "tie down & chock": "remove"
       - "fuel vent": "clear"
       - "fuel tank sump": "drain, check"
       - "fuel tank": "check, secure"
       - "pitot head": "3 holes clear"
-      - "wing tip and lights": "check"
-      - "flap & aileron": "check"
+      - "wing tip & lights": "check"
+      - "flap": "check"
+      - "aileron": "check"
       - "hinges": "check"
       - "static wicks": "check"
 
   fuselage:
-    title: "preflight: fuselage"
+    title: "fuselage"
     class: "preflight"
     steps:
       - "antennas": "check"
-      - "empennage": "no ice, snow, frost"
+      - "empennage": "no ice,<br>snow, frost"
       - "fresh air inlet": "clear"
       - "rudder & stabilator": "check"
       - "trim tab & nut": "check & clear"
       - "tie down": "remove"
       - "baggage area": "secure"
+
+  final:
+    title: "final"
+    class: "preflight"
+    steps:
+      - "left wing sump": "drain & check"
+      - "left fuel tank": "visual check"
+      - "left fuel cap": "secure"
+      - "right wing sump": "drain & check"
+      - "right fuel tank": "visual check"
+      - "right fuel cap": "secure"
+      - "nose fuel<br>strainer": "drain & check"
+      - "chocks": "confirm removed"
+      - "tie downs": "confirm removed"
+      - "tail lock": "in cabin"
+      - "flaps": "retract"
       - "passengers": "board"
       - "cabin door": "close & secure"
+
 
 passenger_safety_brief:
   title: passenger safety briefing
   steps:
     - bold: Seatbelts
-      ital: Demonstrate usage
-      ul:
-        - "Required for taxi, takeoff, landing."
-        - "Please keep on for entire flight."
-    - bold: Air Vents / Sickness
-      ital: Point out and demonstrate
-      ul:
-        - "Speak up if you are feeling unwell."
-        - "Sick bag is available."
-    - bold: Fire extinguisher
+    - bold: Air Vents / Air Sickness
+    - bold: Fire Extinguisher
     - bold: Exits
-      ital: Location and mechanism
-      ul:
-        - "Wait until the propeller has stopped."
-        - "Exit towards the back of the wing."
-    - bold: Talking
-      ul:
-        - "Sterile cockpit: takeoff and landing."
+    - bold: Talking / Traffic
     - bold: Your questions?
 
 before_engine_start:
   title: before engine start
   class: "ground"
   steps:
-    - "tail lock": "in cabin"
-    - "flaps": "retract"
-    - "passenger safety briefing": "complete"
+    - "passenger safety<br>briefing": "complete"
     - "seats & belts": "secure"
     - "fuel selector": "lowest tank"
     - "circuit breakers": "check"
-    - "strobes": "on"
+    - "strobes switch": "on"
     - "carb heat": "off"
     - "avionics": "off"
     - "parking brake": "set"
@@ -158,10 +216,11 @@ engine_start:
     - "fuel pump": "on"
     - "prime": "cold: 3-5 sec<br>warm: 2 sec<br>hot: 0 sec"
     - "propeller area": "clear"
+    - "brakes": "pressed"
     - "starter": "engage"
     - "throttle": "800 rpm"
     - "oil pressure": "check"
-    - "fuel pump": "off, check pressure"
+    - "fuel pump": "off & check<br>pressure"
     - "mixture": "lean"
 
 before_taxi:
@@ -170,29 +229,33 @@ before_taxi:
   steps:
     - "avionics": "on"
     - "transponder": "alt & 1200"
-    - "passenger headsets": "set up & check"
-    - "attitude gyro": "align"
-    - "directional gyro": "align"
+    - "passenger headsets": "set up &<br>check"
+    - "instruments": ""
+    - "... airspeed": "0"
+    - "... attitude gyro": "level"
+    - "... altimeter": "field<br>elevation"
+    - "... directional gyro": "align"
+    - "... vertical speed": "0"
     - "navigation": "set flight plan"
-    - "ATIS": "check & note"
-    - "radio #1": "ground/ctaf"
-    - "radio #2": "121.5"
+    - "radio #1": "ground/ctaf &<br>approach"
+    - "radio #2": "tower & 121.5"
     - "lights": "as needed"
     - "pre taxi briefing": "complete"
-    - "taxi to runway clearance": "received"
 
 pre_taxi_brief:
   title: pre taxi briefing
   steps:
     - bold: ATIS
-      ital: "Listen and write down"
-    - bold: Taxi diagram
-      ital: "Pulled up for reference"
-    - bold: Ground clearance
       ul:
-        - "Monitor before calling"
+        - "Listen and write down"
+    - bold: Taxi diagram
+      ul:
+        - "Visible for reference"
         - "Anticipate taxi route"
-        - "Write and read back instructions"
+        - "Note run-up location"
+    - bold: "Ground: taxi clearance"
+      ul:
+        - "Monitor, write & read back"
 
 radio:
   ground_taxi_runway_clearance:
@@ -207,7 +270,7 @@ radio:
     title: "Takeoff Clearance"
     radio: |
       <span>airport</span> tower
-      <br> ... <span>tailnum</span> holding short of <span>runway</span>
+      <br> ... <span>tailnum</span> holding short of <span>rwy</span>
       <br> ... ready for takeoff
   ground_taxi_parking_clearance:
     title: "Taxi To Parking Clearance"
@@ -222,7 +285,7 @@ taxi:
   steps:
     - "parking brake": "release"
     - "brakes": "check"
-    - "flight instruments": "check"
+    - "turn coordinator": "check"
 
 engine_runup:
   title: engine runup
@@ -231,15 +294,15 @@ engine_runup:
     - "parking brake": "set"
     - "oil temp": "green"
     - "fuel selector": "other tank"
-    - "mixture": "rich below 5k"
+    - "mixture (below 5000')": "rich"
     - "throttle": "2000 rpm"
-    - "magnetos": "max drop 175<br>max diff 50"
-    - "vacuum": "4.8 - 5.2\""
+    - "magnetos": "max drop -175<br>max diff 50"
+    - "vacuum": "4.8\" - 5.2\""
     - "engine gauges": "check"
     - "annunciator panel": "test"
-    - "lights, fuel pump<br>& pitot head": "on"
+    - "lights, fuel pump &<br>pitot heat": "on"
     - "ammeter": "check"
-    - "lights, fuel pump<br>& pitot head": "off"
+    - "lights, fuel pump &<br>pitot heat": "off"
     - "carb heat": "on, drop ~75"
     - "throttle": "idle"
     - "carb heat": "off"
@@ -250,8 +313,6 @@ before_takeoff:
   title: before takeoff
   class: ground
   steps:
-    - "fuel pump": "on"
-    - "pitot heat": "as required"
     - "flight instruments": "check"
     - "trims": "both neutral"
     - "flaps": "normal 0<br>short/soft 2"
@@ -259,7 +320,6 @@ before_takeoff:
     - "door & window": "secure"
     - "radio": "tower/ctaf"
     - "lights": "on"
-    - "mixture": "rich"
     - "pre takeoff briefing": "complete"
 
 pre_takeoff_brief:
@@ -267,26 +327,20 @@ pre_takeoff_brief:
   steps:
     - bold: Runway
     - bold: Wind
-      ital: "Direction & correction"
     - bold: Speeds
-      ital: "Rotation & climb"
-    - bold: Procedure
-      ital: "Turns & altitudes"
     - bold: Emergencies
+    - bold: "Tower: takeoff clearance"
       ul:
-        - Sufficient runway
-        - Insufficient runway, insufficient altitude
-        - Sufficient altitude
-    - bold: Tower clearance
-      ul:
-        - "Monitor before calling"
-        - "Read back instructions"
+        - "Monitor, write & read back"
 
 takeoff:
   title: takeoff
   class: air
   steps:
-    - "mixture": "rich below 5k"
+    - "pitot heat": "as required"
+    - "mixture (below 5000')": "rich"
+    - "primer": "locked"
+    - "fuel pump": "on"
     - "throttle": "full"
     - "power": "2330 - 2430 RPM"
     - "engine gauges": "check"
@@ -300,7 +354,7 @@ climb:
     - "flaps": "retract at 65 kias"
     - "fuel pump": "off & check<br>pressure"
     - "oil temp & pressure": check
-    - "airspeed<br>(cruise climb)": "87 kias <br> 500'/min"
+    - "cruise climb speed": "87 kias<br>500'/min"
 
 cruise:
   title: Cruise
@@ -325,18 +379,19 @@ descent:
     - "power": "as required"
     - "mixture": "as required"
     - "carb heat": "as required"
-    - "seats & belts": "upright & secure"
+    - "seats & belts": "upright &<br>secure"
 
 approach_and_landing:
   title: "Approach & Landing"
   class: air
   steps:
-    - "downwind": "90 kts"
     - "fuel pump": "on"
     - "fuel selector": "fullest tank"
-    - "mixture": "rich below 5k"
-    - "carb heat": "off on final"
+    - "mixture (below 5000')": "rich"
+    - "downwind": "90 kts"
+    - "power": "1500 RPM"
     - "flaps": "under 103 kias"
+    - "carb heat": "off on final"
     - "landing (0°)": "70 kias"
     - "landing (40°)": "63 kias"
 
@@ -354,15 +409,6 @@ after_landing:
     - "pitot heat": "off"
     - "transponder": "1200"
 
-after_landing_radio:
-  steps:
-    - bold: Ground clearance
-      ul:
-        - "Tower instructions to exit runway"
-        - "Switch to ground, shorthand 121.XX"
-        - "Write and read back instructions"
-        - "Can request 'transient parking'"
-
 shutdown:
   title: shutdown
   class: ground
@@ -374,12 +420,13 @@ shutdown:
     - "propeller": "stopped"
     - "magnetos": "off, key out"
     - "electrical switches": "off"
-    - "strobes": "leave on"
-    - "master & alt switches": "off"
-    - "hobbs & tach": "record"
-    - "flight controls": "secure"
-    - "PARKING BRAKE": "released"
-    - "tie downs / chocks": "in place / secure"
+    - "strobes switch": "leave on"
+    - "master switch": "off"
+    - "<b>HOBBS & TACH</b>": "record"
+    - "<b>FLIGHT CONTROLS</b>": "secure"
+    - "<b>PARKING BRAKE</b>": "released"
+    - "tie downs &<br>chocks": "in place &<br>secure"
+    - "tail lock": "secure"
     - "cover": "on"
 
 emergency:
@@ -427,120 +474,46 @@ emergency:
     class: emergency
     steps:
       - "carb heat": " on"
-      - "IF STILL ROUGH AFTER ONE MINUTE:": ""
-      - "carb heat": " off"
-      - "mixture": " adjust to smoothest"
+      - "STILL ROUGH AFTER 60s<br>carb heat": "<br>off"
+      - "mixture": " adjust to<br>smoothest"
       - "fuel pump": " on"
       - "fuel selector": "switch tanks"
       - "engine gauges": " check"
-      - "magnetos": " check/select smoothest"
+      - "magnetos": " check/select<br>smoothest"
       - "mixture": " rich"
       - "land": " as soon as practical"
 
-# bed_frequencies: |
-#   <table class="reference gray">
-#     <caption>
-#       Bedford Comms
-#     </caption>
-#     <tbody>
-#       <tr>
-#         <td class="key">ATIS</td>
-#         <td class="value mono">124.6</td>
-#       </tr>
-#       <tr>
-#         <td class="key">Ground</td>
-#         <td class="value mono">121.7</td>
-#       </tr>
-#       <tr>
-#         <td class="key">Tower</td>
-#         <td class="value mono">118.5</td>
-#       </tr>
-#       <tr>
-#         <td class="key">Boston Approach</td>
-#         <td class="value mono">124.4</td>
-#       </tr>
-#       <tr>
-#         <td rowspan="2" class="key">Signature</td>
-#         <td class="value mono">130.8</td>
-#       </tr>
-#       <tr>
-#         <td class="value mono">781-274-0010 </td>
-#       </tr>
-#     </tbody>
-#   </table>
-# speeds: |
-#   <table class="reference gray">
-#     <caption>
-#       Speeds
-#     </caption>
-#     <tbody>
-#       <tr>
-#         <td class="key">Maneuver (2440 lbs)</td>
-#         <td class="value mono">V<sub>A</sub></td>
-#         <td class="value mono">111</td>
-#       </tr>
-#       <tr>
-#         <td class="key">Maneuver (1531 lbs)</td>
-#         <td class="value mono">V<sub>A</sub></td>
-#         <td class="value mono">88</td>
-#       </tr>
-#       <tr>
-#         <td class="key">Max flaps extended</td>
-#         <td class="value mono">V<sub>FE</sub></td>
-#         <td class="value mono">103</td>
-#       </tr>
-#       <tr>
-#         <td class="key">Best rate climb (0°)</td>
-#         <td class="value mono">V<sub>Y</sub></td>
-#         <td class="value mono">79</td>
-#       </tr>
-#       <tr>
-#         <td class="key">Best angle climb (0°)</td>
-#         <td class="value mono">V<sub>X</sub></td>
-#         <td class="value mono">63</td>
-#       </tr>
-#       <tr>
-#         <td class="key">Best angle climb (25°)</td>
-#         <td class="value mono">V<sub>X</sub></td>
-#         <td class="value mono">57</td>
-#       </tr>
-#       <tr>
-#         <td class="key">Best glide (0°)</td>
-#         <td class="value mono">V<sub>G</sub></td>
-#         <td class="value mono">73</td>
-#       </tr>
-#       <tr>
-#         <td class="key">Stall (clean)</td>
-#         <td class="value mono">V<sub>S1</sub></td>
-#         <td class="value mono">51</td>
-#       </tr>
-#       <tr>
-#         <td class="key">Stall (full flaps)</td>
-#         <td class="value mono">V<sub>S0</sub></td>
-#         <td class="value mono">44</td>
-#       </tr>
-#     </tbody>
-#   </table>
-# specs: |
-#   <table class="reference gray">
-#     <caption>
-#       Specs
-#     </caption>
-#     <tbody>
-#       <tr><td class="key">Glide distance</td>
-#       <td class="value">1 NM / 550'</td></tr>
-#       <tr><td class="key">Usable @ tabs / full</td>
-#       <td class="value">34 G / 48 G</td></tr>
-#       <tr><td class="key">Taxi fuel</td>
-#       <td class="value">1 G</td></tr>
-#       <tr><td class="key">Climb fuel</td>
-#       <td class="value">12 GPH</td></tr>
-#       <tr><td class="key">Crosswind</td>
-#       <td class="value">17 KTS</td></tr>
-#       <tr><td class="key">Cruise<br>3000 @ 65%</td>
-#       <td class="value">2320 RPM<br>103 KTS</td></tr>
-#     </tbody>
-#   </table>
+  engine_fire_in_flight:
+    title: "engine fire in flight"
+    class: emergency
+    steps:
+      - "fuel selector": "off"
+      - "throttle": "closed"
+      - "mixture": "cutoff"
+      - "fuel pump": "off"
+      - "heater & defroster": "off"
+      - "speed": "increase / extinguish"
+      - "land": "immediately "
+
+  electric_fire:
+    title: "electrical (cabin) fire"
+    class: emergency
+    steps:
+      - "master switch": "off"
+      - "alternator switch": "off"
+      - "vents": "open"
+      - "heater & defroster": "off"
+      - "fire extinguisher": "as necessary"
+      - "land": "as soon as practical"
+  
+  loss_fuel_pressure:
+    title: "loss of fuel pressure"
+    class: emergency
+    steps:
+      - "fuel pump": "on"
+      - "fuel selector": "check on<br>full tank"
+
+
 
 
 

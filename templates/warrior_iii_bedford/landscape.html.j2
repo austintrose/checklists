@@ -4,9 +4,26 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Warrior III - Bedford</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='landscape.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/landscape.css') }}">
+  <style>
+    @page {
+      margin: 0;
+      size: letter landscape;
+    }
+
+    @media screen {
+      body {
+        background: #e0e0e0;
+      }
+
+      .paper {
+        background: white;
+        box-shadow: 0 .5mm 2mm rgba(0, 0, 0, .3);
+        margin: 5mm auto;
+      }
+    }
+  </style>
 </head>
 
 {% macro checklist(details) %}
@@ -16,7 +33,9 @@
   {% for k, v in i|items %}
   <div class="row">
     <div class="col left">{{k}}</div>
-    <div class="col middle"></div>
+    <div class="col middle">
+    {# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  #}
+    </div>
     <div class="col right">{{v}}</div>
   </div>
   {% endfor %}
@@ -29,15 +48,21 @@
   <div class="section-title">{{details.title}}</div>
   {% for i in details.steps %}
   <div class="row">
+    {% if i.bold is defined %}
     <div class="bold">{{i.bold}}</div>
+    {% endif %}
+
+    {% if i.ital is defined %}
     <div class="ital">{{i.ital}}</div>
-    <div class="body">
+    {% endif %}
+
+    {% if i.ul is defined %}
       <ul>
-      {% for li in i.ul %}
+        {% for li in i.ul %}
         <li>{{li}}</li>
-      {% endfor %}
+        {% endfor %}
       </ul>
-    </div>
+    {% endif %}
   </div>
   {% endfor %}
 </div>
@@ -46,10 +71,76 @@
 {% macro radio(details) %}
 <div class="section radio">
   <div class="section-title">{{details.title}}</div>
-  <div class="row">
+  <div class="row radio">
     {{details.radio}}
   </div>
 </div>
+{% endmacro %}
+
+{% macro airport(details) %}
+<table class="airport">
+  <thead>
+  <tr>
+    <th scope="row" colspan="2">{{details.alias}} ({{details.title}})</th>
+  </tr>
+  </thead>
+<tbody>
+
+  <tr><th>
+    TPA
+  </th><th>
+    Elevation
+  </th></tr>
+  <tr><td>
+    {{details.tpa}}
+  </td><td>
+    {{details.elevation}}
+  </td></tr>
+
+  <tr><th>
+    ATIS
+  </th><th>
+    GND
+  </th></tr>
+  <tr><td>
+    {{details.atis}}
+  </td><td>
+    {{details.ground}}
+  </td></tr>
+
+  <tr><th>
+    TWR
+  </th><th>
+    UNI
+  </th></tr>
+  <tr><td>
+    {{details.tower}}
+  </td><td>
+    {{details.unicom}}
+  </td></tr>
+
+  <tr><th>
+    {{details.app_dep_alias}} APP
+  </th><th>
+    {{details.app_dep_alias}} DEP
+  </th></tr>
+  <tr><td>
+    {{details.approach}}
+  </td><td>
+    {{details.departure}}
+  </td></tr>
+
+  {% for k,v in details.runways|items %}
+  <tr>
+    <th colspan="2">RWY {{k}}</th>
+  </tr>
+  <tr>
+    <td colspan="2">{{v}}</td>
+  </tr>
+  {% endfor %}
+
+</tbody>
+</table>
 {% endmacro %}
 
 
@@ -57,94 +148,121 @@
 
   <div class="paper">
     <div class="page left">
-      <div class="column single">
+      {# <div class="column single"> #}
+      {# </div> #}
+      <div class="column left">
         <div class="title">Piper Warrior III</div>
         <div class="title sub">PA-28-161</div>
-        <div class="title sub">Bedford Checklists</div>
-        <p>template for xc plan</p>
-        <p>XC plan items:</p>
-        <ul>
-          <li>Airports: frequencies, runways, field altitude, pattern altitude, parking location, towered or no</li>
-          <li>Cruising altitude, time to descend</li>
-          <li>Total weight</li>
-          <li>Endurance</li>
-        </ul>
-        <p>Last 2year flight review, next required</p>
-        <p>Medical expire date</p>
-        <p>Warrior II with primer: primer in and locked</p>
-        <p>Add to list: everything from flight bag... sentry, ipad, pair with sentry/stratus, </p>
-        <p>buy energizer aa lithium</p>
-        <p>reminder or alarm or pnemonic for switching fuel tanks... like on approach freq change</p>
-        <p>keys on dash</p>
-        <p>preflight checklist no need to be accessible in flight in book</p>
-        <p>briefing sections dont need italic</p>
-        <p>Ground clearance briefing section after landing awkward</p>
+        {{airport(data.airport.KBED)}}
+        {{checklist(data.preflight.speeds)}}
+      </div>
+      <div class="column right">
+        <div class="title">EAC Bedford</div>
+        <div class="title sub">Checklists</div>
+        {{airport(data.airport.KMVY)}}
+        <p class="mono">Signature (text): 781-773-4046</p>
       </div>
     </div>
     <div class="page right">
       <div class="column left">
         {{checklist(data.preflight.cockpit)}}
+      </div>
+      <div class="column right">
+        {{checklist(data.preflight.electrical)}}
+      </div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="page left">
+      <div class="column left">
         {{checklist(data.preflight.right_wing)}}
       </div>
       <div class="column right">
         {{checklist(data.preflight.nose)}}
-        {{checklist(data.preflight.left_wing)}}
-        {{checklist(data.preflight.fuselage)}}
-      </div>
-    </div>
-  </div>
-
-  <div class="paper">
-    <div class="page left">
-      <div class="column left">
-        {{checklist(data.before_engine_start)}}
-        {{checklist(data.engine_start)}}
-        {{checklist(data.before_taxi)}}
-      </div>
-      <div class="column right">
-        {{briefing(data.passenger_safety_brief)}}
-        {{briefing(data.pre_taxi_brief)}}
-        {{radio(data.radio.ground_taxi_runway_clearance)}}
       </div>
     </div>
     <div class="page right">
       <div class="column left">
-        {{checklist(data.taxi)}}
-        {{checklist(data.engine_runup)}}
-        {{checklist(data.before_takeoff)}}
+        {{checklist(data.preflight.left_wing)}}
       </div>
       <div class="column right">
-        {{briefing(data.pre_takeoff_brief)}}
-        {{radio(data.radio.ground_takeoff_clearance)}}
-        {{checklist(data.takeoff)}}
+        {{checklist(data.preflight.fuselage)}}
+        {{checklist(data.preflight.final)}}
+      </div>
+    </div>
+  </div>
+
+
+  <div class="paper">
+    <div class="page left">
+      <div class="column left">
+        {{briefing(data.passenger_safety_brief)}}
+        {{checklist(data.before_engine_start)}}
+        {{checklist(data.emergency.engine_fire_start)}}
+      </div>
+      <div class="column right">
+        {{checklist(data.engine_start)}}
+      </div>
+    </div>
+    <div class="page right">
+      <div class="column left">
+        {{checklist(data.before_taxi)}}
+        {{briefing(data.pre_taxi_brief)}}
+      </div>
+      <div class="column right">
+        {{radio(data.radio.ground_taxi_runway_clearance)}}
+        {{checklist(data.taxi)}}
       </div>
     </div>
   </div>
 
   <div class="paper">
     <div class="page left">
+      <div class="column left">
+        {{checklist(data.engine_runup)}}
+        {{briefing(data.pre_takeoff_brief)}}
+      </div>
+      <div class="column right">
+        {{checklist(data.before_takeoff)}}
+        {{radio(data.radio.ground_takeoff_clearance)}}
+        {{checklist(data.takeoff)}}
+      </div>
+    </div>
+    <div class="page right">
       <div class="column left">
         {{checklist(data.climb)}}
         {{checklist(data.cruise)}}
         {{checklist(data.fuel_tank_switch)}}
         {{checklist(data.descent)}}
-        {{checklist(data.approach_and_landing)}}
       </div>
       <div class="column right">
+        {{checklist(data.approach_and_landing)}}
+      </div>
+    </div>
+  </div>
+
+
+  <div class="paper">
+    <div class="page left">
+      <div class="column left">
         {{checklist(data.after_landing)}}
-        {{briefing(data.after_landing_radio)}}
         {{radio(data.radio.ground_taxi_parking_clearance)}}
+      </div>
+      <div class="column right">
         {{checklist(data.shutdown)}}
       </div>
     </div>
     <div class="page right">
       <div class="column left">
-        {{checklist(data.emergency.engine_fire_start)}}
         {{checklist(data.emergency.engine_power_loss_in_flight)}}
         {{checklist(data.emergency.engine_roughness)}}
+        {{checklist(data.emergency.engine_fire_in_flight)}}
       </div>
       <div class="column right">
         {{checklist(data.emergency.power_off_landing)}}
+        {{checklist(data.emergency.loss_fuel_pressure)}}
+        {{checklist(data.emergency.electric_fire)}}
       </div>
     </div>
   </div>
